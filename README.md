@@ -260,6 +260,104 @@ This Django project is a backend API for an e-commerce application. It provides 
 This API supports a basic e-commerce platform with features like product listing, cart management, reviews, wishlist, checkout, and user management.
 
 ---
+# API Documentation
+
+## Getting Started
+
+This API provides user management and authentication services with support for JSON Web Token (JWT) authentication.
+
+## Available Endpoints
+
+### User Management
+
+#### User Registration & Profile
+- **`/auth/users/`** - User registration and profile management
+- **`/auth/users/me/`** - Get current user profile information
+
+#### Account Activation & Password Management
+- **`/auth/users/resend_activation/`** - Resend account activation email
+- **`/auth/users/set_password/`** - Set new password for user account
+- **`/auth/users/reset_password/`** - Request password reset
+- **`/auth/users/reset_password_confirm/`** - Confirm password reset with token
+
+#### Username Management
+- **`/auth/users/set_username/`** - Set/change username
+- **`/auth/users/reset_username/`** - Request username reset
+- **`/auth/users/reset_username_confirm/`** - Confirm username reset with token
+
+### Authentication
+
+#### JSON Web Token (JWT) Authentication
+- **`/auth/jwt/create/`** - Create JWT token (login)
+- **`/auth/jwt/refresh/`** - Refresh JWT token
+- **`/auth/jwt/verify/`** - Verify JWT token validity
+
+## Authentication Methods
+
+### JSON Web Token (JWT) Authentication
+JWT-based authentication providing stateless authentication with refresh token support.
+
+**Create Token:**
+```http
+POST /auth/jwt/create/
+```
+
+**Refresh Token:**
+```http
+POST /auth/jwt/refresh/
+```
+
+**Verify Token:**
+```http
+POST /auth/jwt/verify/
+```
+
+## User Management Features
+
+### Registration Process
+1. Register new user via `/auth/users/`
+2. Activate account using activation email
+3. Resend activation if needed via `/auth/users/resend_activation/`
+
+### Password Management
+- Set initial password: `/auth/users/set_password/`
+- Reset forgotten password: `/auth/users/reset_password/`
+- Confirm password reset: `/auth/users/reset_password_confirm/`
+
+### Username Management
+- Update username: `/auth/users/set_username/`
+- Reset username: `/auth/users/reset_username/`
+- Confirm username reset: `/auth/users/reset_username_confirm/`
+
+### Profile Access
+- Get current user info: `/auth/users/me/`
+
+
+1. **Register a new user**
+   ```http
+   POST /auth/users/
+   ```
+
+2. **Activate your account** (check email for activation link)
+
+3. **Login to get authentication token**
+   ```http
+   # for JWT
+   POST /auth/jwt/create/
+   ```
+
+4. **Access protected resources** using your token
+
+
+## Security Features
+
+- Account activation via email
+- Password reset functionality
+- Username reset capability
+- JWT support for stateless authentication
+- Secure token refresh mechanism
+
+---
 
 ## 📦 Products
 
