@@ -140,3 +140,14 @@ class WishListSerializer(serializers.ModelSerializer):
         if created is False:
             raise serializers.ValidationError({'error' : 'You added this product to the wishlist before!'})
         return wish_list
+    
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
+        fields = '__all__'
+
+class OrderSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(many =True , read_only = True)
+    class Meta:
+        model = Order
+        fields = ['id','amount','currency','status','created_at','customer_email','items']

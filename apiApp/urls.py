@@ -11,6 +11,7 @@ router.register(r'carts',CartViewSet)
 router.register(r'reviews',ReviewViewSet)
 router.register(r'product-ratings',ProductRatingViewSet)
 router.register(r'wishlists',WishListViewSet)
+router.register(r'orders',OrderViewSet)
 urlpatterns = [
     path('',include(router.urls)),
     path('create_checkout_session/',csrf_exempt(create_checkout_session),name='create_checkout_session'),

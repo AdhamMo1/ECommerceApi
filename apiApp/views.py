@@ -158,3 +158,8 @@ def fulfill_checkout(session, cart_id):
         orderitem = OrderItem.objects.create(order=order, product=item.product,quantity=item.quantity)
     
     cart.delete()
+
+
+class OrderViewSet(ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer 
