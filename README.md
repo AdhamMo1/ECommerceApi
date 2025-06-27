@@ -230,7 +230,7 @@ This Django project is a backend API for an e-commerce application. It provides 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/AdhamMo1/ECommerceApi.git
+   git clone https://github.com/AdhamMo1/ECommerceApi-Django.git
    cd ECommerceApi
    ```
 2. Create a virtual environment and activate it:
