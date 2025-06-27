@@ -271,26 +271,26 @@ This API provides user management and authentication services with support for J
 ### User Management
 
 #### User Registration & Profile
-- **`/users/`** - User registration and profile management
-- **`/users/me/`** - Get current user profile information
+- **`/auth/users/`** - User registration and profile management
+- **`/auth/users/me/`** - Get current user profile information
 
 #### Account Activation & Password Management
-- **`/users/resend_activation/`** - Resend account activation email
-- **`/users/set_password/`** - Set new password for user account
-- **`/users/reset_password/`** - Request password reset
-- **`/users/reset_password_confirm/`** - Confirm password reset with token
+- **`/auth/users/resend_activation/`** - Resend account activation email
+- **`/auth/users/set_password/`** - Set new password for user account
+- **`/auth/users/reset_password/`** - Request password reset
+- **`/auth/users/reset_password_confirm/`** - Confirm password reset with token
 
 #### Username Management
-- **`/users/set_username/`** - Set/change username
-- **`/users/reset_username/`** - Request username reset
-- **`/users/reset_username_confirm/`** - Confirm username reset with token
+- **`/auth/users/set_username/`** - Set/change username
+- **`/auth/users/reset_username/`** - Request username reset
+- **`/auth/users/reset_username_confirm/`** - Confirm username reset with token
 
 ### Authentication
 
 #### JSON Web Token (JWT) Authentication
-- **`/jwt/create/`** - Create JWT token (login)
-- **`/jwt/refresh/`** - Refresh JWT token
-- **`/jwt/verify/`** - Verify JWT token validity
+- **`/auth/jwt/create/`** - Create JWT token (login)
+- **`/auth/jwt/refresh/`** - Refresh JWT token
+- **`/auth/jwt/verify/`** - Verify JWT token validity
 
 ## Authentication Methods
 
@@ -299,43 +299,43 @@ JWT-based authentication providing stateless authentication with refresh token s
 
 **Create Token:**
 ```http
-POST /jwt/create/
+POST /auth/jwt/create/
 ```
 
 **Refresh Token:**
 ```http
-POST /jwt/refresh/
+POST /auth/jwt/refresh/
 ```
 
 **Verify Token:**
 ```http
-POST /jwt/verify/
+POST /auth/jwt/verify/
 ```
 
 ## User Management Features
 
 ### Registration Process
-1. Register new user via `/users/`
+1. Register new user via `/auth/users/`
 2. Activate account using activation email
-3. Resend activation if needed via `/users/resend_activation/`
+3. Resend activation if needed via `/auth/users/resend_activation/`
 
 ### Password Management
-- Set initial password: `/users/set_password/`
-- Reset forgotten password: `/users/reset_password/`
-- Confirm password reset: `/users/reset_password_confirm/`
+- Set initial password: `/auth/users/set_password/`
+- Reset forgotten password: `/auth/users/reset_password/`
+- Confirm password reset: `/auth/users/reset_password_confirm/`
 
 ### Username Management
-- Update username: `/users/set_username/`
-- Reset username: `/users/reset_username/`
-- Confirm username reset: `/users/reset_username_confirm/`
+- Update username: `/auth/users/set_username/`
+- Reset username: `/auth/users/reset_username/`
+- Confirm username reset: `/auth/users/reset_username_confirm/`
 
 ### Profile Access
-- Get current user info: `/users/me/`
+- Get current user info: `/auth/users/me/`
 
 
 1. **Register a new user**
    ```http
-   POST /users/
+   POST /auth/users/
    ```
 
 2. **Activate your account** (check email for activation link)
@@ -343,7 +343,7 @@ POST /jwt/verify/
 3. **Login to get authentication token**
    ```http
    # for JWT
-   POST /jwt/create/
+   POST /auth/jwt/create/
    ```
 
 4. **Access protected resources** using your token
