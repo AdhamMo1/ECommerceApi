@@ -217,7 +217,7 @@ This will start the Django development server, and you can test the API via tool
 ## Project Overview
 This Django project is a backend API for an e-commerce application. It provides endpoints for managing products, categories, cart items, reviews, user authentication, orders, and payment integration using Stripe.
 
-🚀 **Live API Base URL:** 
+🚀 **Live API Base URL:** https://ecommerceapi-production-382e.up.railway.app/
 
 ## Features
 - User authentication and management
