@@ -230,8 +230,8 @@ This Django project is a backend API for an e-commerce application. It provides 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone <repository_url>
-   cd project_directory
+   git clone https://github.com/AdhamMo1/ECommerceApi.git
+   cd ECommerceApi
    ```
 2. Create a virtual environment and activate it:
    ```sh
@@ -490,31 +490,6 @@ This API supports a basic e-commerce platform with features like product listing
 - **Response**: List of orders for the user.
 
 ---
-
-## 🏠 Address
-
-### `POST /add_address/`
-- **Payload**:
-```json
-{
-  "email": "user@example.com",
-  "street": "123 Street",
-  "state": "Lagos",
-  "city": "Cityname",
-  "phone": "123456789"
-}
-```
-- **Response**: Created or updated address.
-
-### `GET /get_address?email=user@example.com`
-- **Response**:
-```json
-{
-  "email": "user@example.com",
-  "street": "123 Street",
-  ...
-}
-```
 
 ---
 
